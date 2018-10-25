@@ -29,7 +29,7 @@ class Home extends Component {
     
     render() {
         return (
-            <div>
+            <div className='top_padding'>
                 <div>
                     Home Awyis
                 </div>

@@ -1,0 +1,68 @@
+body {
+    padding:0;
+    margin:0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.font_righteous {
+    font-family: 'Righteous', cursive;
+}
+
+.bck_black {
+    background: #3c3c3c;
+}
+.bck_white {
+    background: #ffffff;
+}
+.bck_red {
+    background: #ff4800;
+}
+.bck_yellow {
+    background: #ffa800;
+}
+
+/*====================
+        HEADER
+======================*/
+
+
+header {
+    padding:50px 0px;
+    transition: all 300ms ease-in;
+}
+
+header .header_logo_large {
+    font-size: 50px;
+    font-family: 'Righteous', cursive;
+}
+
+header .header_logo_title {
+    text-transform: uppercase;
+}
+
+header .header_logo_nav {
+    font-size: 40px;
+    font-family: 'Righteous', cursive;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*====================
+        FOOTER
+======================*/
+
+footer {
+    padding:40px 0px;
+    text-align: center;
+    font-size: 40px;
+    color:#ffffff;
+    background: #63c2da;
+}
+
+footer .footer_copyright {
+    font-size: 18px;
+}
+
