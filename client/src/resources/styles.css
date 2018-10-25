@@ -31,9 +31,15 @@ body {
 }
 
 h2 {
-    margin: 20px;
     font-family: 'Righteous', cursive;
     color: #ff7c48;
+    font-size: 40px;
+}
+
+p {
+    font-family: 'Righteous', cursive;
+    color: #ff7c48;
+    font-size: 24px;
 }
 
 /*====================
@@ -74,7 +80,7 @@ footer {
     text-align: center;
     font-size: 40px;
     color:#ffffff;
-    background: #ffda8f;
+    background: #ffc249;
 }
 
 footer .footer_copyright {
@@ -118,24 +124,41 @@ button {
          REGISTER LOGIN
 ===============================*/
 
-.register_login_container {
+.register_page {
+    min-height: 700px;
+}
+
+.register_container {
     border: 1px solid #ffb171;
     border-bottom: 4px solid #fdff9a;
+    border-right: 4px solid #ffb171;
     margin: auto;
+    margin-top: 50px;
     padding: 50px;
     min-height: 500px;
     width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.register_wrapper {
+    margin-right: 15px;
+}
+
+.register_inputs {
+    margin-top: 20px;
 }
 
 .flex{
     display: flex;
 }
 
-.register_login_container .left {
-    margin:10px;
+.register_container .left {
+    margin-right: 10px;
     flex:1;
 }
-.register_login_container .right {
-    margin:10px;
+.register_container .right {
+    margin-left: 10px;
     flex:1;
 }

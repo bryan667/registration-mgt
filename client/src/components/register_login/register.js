@@ -116,17 +116,22 @@ class Register extends Component {
 
     render() {
         return (
-            <div>
-                <div className='register_login_container'>
+            <div className='register_page'>
+                <div className='register_container'>
                     <div>
                         <form onSubmit={(event) => this.submitForm(event)}>
                             <div className='flex'>
-                                <h2>Registration Page</h2>
-                                <DogeImage 
-                                    padding={'100px'}
-                                />
+                                <div className='register_wrapper'>
+                                    <h2>Registration Page</h2>
+                                    <p>welcome humane, many register pls join us.</p>
+                                </div>
+                                <div>
+                                    <DogeImage 
+                                        padding={'100px'}
+                                    />
+                                </div>
                             </div>
-                            <div className='flex'>
+                            <div className='register_inputs flex '>
                                 <div className='left'>
                                     <Formfield
                                         id={'name'}
@@ -156,7 +161,7 @@ class Register extends Component {
                                         change={(element)=> this.updateForm(element)}
                                     />
                                 </div>
-                                </div>
+                            </div>
                                 <div>
                                         {this.state.formError ? 
                                             <div className='error_label'>

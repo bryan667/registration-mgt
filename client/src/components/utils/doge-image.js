@@ -7,9 +7,10 @@ const DogeImage = ({padding}) => {
             background: `url(${Doge}) center no-repeat`,
             padding: padding,
             margin: 'auto',
-            backgroundSize: '100%'
+            backgroundSize: 'contain',
+            border: '10px solid #ff7c48',
+            borderRadius: '50%',
         }}
-        className='circle'
         ></div>
     );
 };
