@@ -66,3 +66,13 @@ footer .footer_copyright {
     font-size: 18px;
 }
 
+/*============================
+            FORM
+==============================*/
+
+.error_label {
+    color: #F44336;
+    display:block;
+    font-size: 15px;
+}
+

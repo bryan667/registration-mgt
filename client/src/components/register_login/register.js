@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Formfield from '../utils/formfield'
-import { update } from '../utils/misc'
+import { update, generateData, isFormValid } from '../utils/misc'
 
 class Register extends Component {
 
@@ -98,34 +98,61 @@ class Register extends Component {
         })
     }
 
+    submitForm = (event) => {
+        event.preventDefault()
+
+        let dataToSubmit = generateData(this.state.formdata, 'register')
+        let formIsValid = isFormValid(this.state.formdata, 'register')
+
+        if (formIsValid) {
+            console.log(dataToSubmit)
+        } else {
+            this.setState({
+                formError: true
+            })
+        }       
+    }
+
     render() {
         return (
             <div>
-                <Formfield
-                    id={'name'}
-                    formdata={this.state.formdata.name}
-                    change={(element)=> this.updateForm(element)}
-                />
-                <Formfield
-                    id={'lastname'}
-                    formdata={this.state.formdata.lastname}
-                    change={(element)=> this.updateForm(element)}
-                />
-                <Formfield
-                    id={'email'}
-                    formdata={this.state.formdata.email}
-                    change={(element)=> this.updateForm(element)}
-                />
-                <Formfield
-                    id={'password'}
-                    formdata={this.state.formdata.password}
-                    change={(element)=> this.updateForm(element)}
-                />
-                <Formfield
-                    id={'confirmPassword'}
-                    formdata={this.state.formdata.confirmPassword}
-                    change={(element)=> this.updateForm(element)}
-                />
+                <div>
+                    <Formfield
+                        id={'name'}
+                        formdata={this.state.formdata.name}
+                        change={(element)=> this.updateForm(element)}
+                    />
+                    <Formfield
+                        id={'lastname'}
+                        formdata={this.state.formdata.lastname}
+                        change={(element)=> this.updateForm(element)}
+                    />
+                    <Formfield
+                        id={'email'}
+                        formdata={this.state.formdata.email}
+                        change={(element)=> this.updateForm(element)}
+                    />
+                    <Formfield
+                        id={'password'}
+                        formdata={this.state.formdata.password}
+                        change={(element)=> this.updateForm(element)}
+                    />
+                    <Formfield
+                        id={'confirmPassword'}
+                        formdata={this.state.formdata.confirmPassword}
+                        change={(element)=> this.updateForm(element)}
+                    />
+                </div>
+                <div>
+                    {this.state.formError ? 
+                        <div className='error_label'>
+                            Please check the required fields
+                        </div>
+                    :null}
+                    <button onClick={(event)=> this.submitForm(event)}>
+                        Register
+                    </button>
+                </div>
             </div>
         );
     }
