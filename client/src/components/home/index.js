@@ -14,6 +14,7 @@ class Home extends Component {
 
             response.data.forEach((val, i)=> {
                 let tempObj = {}
+
                 tempObj['email'] = val.email
                 tempObj['name'] = val.name
                 tempObj['lastname'] = val.lastname
@@ -24,6 +25,8 @@ class Home extends Component {
             this.setState({
                 Users: Awyis
             })            
+        }).catch((e)=> {
+            console.log(e)
         })
     }
     

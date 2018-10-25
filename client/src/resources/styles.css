@@ -2,6 +2,7 @@ body {
     padding:0;
     margin:0;
     font-family: 'Roboto', sans-serif;
+    background: #ffda8f;
 }
 
 .font_righteous {
@@ -18,7 +19,21 @@ body {
     background: #ff4800;
 }
 .bck_yellow {
-    background: #ffa800;
+    background: #ffe0a3;
+}
+.center {
+    width: 100%;
+    height: auto;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+h2 {
+    margin: 20px;
+    font-family: 'Righteous', cursive;
+    color: #ff7c48;
 }
 
 /*====================
@@ -59,7 +74,7 @@ footer {
     text-align: center;
     font-size: 40px;
     color:#ffffff;
-    background: #63c2da;
+    background: #ffda8f;
 }
 
 footer .footer_copyright {
@@ -70,9 +85,57 @@ footer .footer_copyright {
             FORM
 ==============================*/
 
+input {
+    font-size: 16px;
+    padding: 10px 10px;
+    width: 100%;
+    margin: 10px 0px 0px 0px;
+    box-sizing: border-box; /*for border control*/
+}
+
+button {
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 20px;
+    background: #e1ddc3;
+    margin-top: 20px;
+    font-family: 'Righteous', sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
 .error_label {
     color: #F44336;
     display:block;
     font-size: 15px;
 }
 
+.formBlock {
+    margin-bottom: 10px;
+}
+
+/*=============================
+         REGISTER LOGIN
+===============================*/
+
+.register_login_container {
+    border: 1px solid #ffb171;
+    border-bottom: 4px solid #fdff9a;
+    margin: auto;
+    padding: 50px;
+    min-height: 500px;
+    width: 50%;
+}
+
+.flex{
+    display: flex;
+}
+
+.register_login_container .left {
+    margin:10px;
+    flex:1;
+}
+.register_login_container .right {
+    margin:10px;
+    flex:1;
+}

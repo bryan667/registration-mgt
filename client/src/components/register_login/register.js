@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Formfield from '../utils/formfield'
 import { update, generateData, isFormValid } from '../utils/misc'
+import DogeImage from '../utils/doge-image'
 
 class Register extends Component {
 
@@ -116,42 +117,58 @@ class Register extends Component {
     render() {
         return (
             <div>
-                <div>
-                    <Formfield
-                        id={'name'}
-                        formdata={this.state.formdata.name}
-                        change={(element)=> this.updateForm(element)}
-                    />
-                    <Formfield
-                        id={'lastname'}
-                        formdata={this.state.formdata.lastname}
-                        change={(element)=> this.updateForm(element)}
-                    />
-                    <Formfield
-                        id={'email'}
-                        formdata={this.state.formdata.email}
-                        change={(element)=> this.updateForm(element)}
-                    />
-                    <Formfield
-                        id={'password'}
-                        formdata={this.state.formdata.password}
-                        change={(element)=> this.updateForm(element)}
-                    />
-                    <Formfield
-                        id={'confirmPassword'}
-                        formdata={this.state.formdata.confirmPassword}
-                        change={(element)=> this.updateForm(element)}
-                    />
-                </div>
-                <div>
-                    {this.state.formError ? 
-                        <div className='error_label'>
-                            Please check the required fields
-                        </div>
-                    :null}
-                    <button onClick={(event)=> this.submitForm(event)}>
-                        Register
-                    </button>
+                <div className='register_login_container'>
+                    <div>
+                        <form onSubmit={(event) => this.submitForm(event)}>
+                            <div className='flex'>
+                                <h2>Registration Page</h2>
+                                <DogeImage 
+                                    padding={'100px'}
+                                />
+                            </div>
+                            <div className='flex'>
+                                <div className='left'>
+                                    <Formfield
+                                        id={'name'}
+                                        formdata={this.state.formdata.name}
+                                        change={(element)=> this.updateForm(element)}
+                                    />
+                                    <Formfield
+                                        id={'lastname'}
+                                        formdata={this.state.formdata.lastname}
+                                        change={(element)=> this.updateForm(element)}
+                                    />
+                                    <Formfield
+                                        id={'email'}
+                                        formdata={this.state.formdata.email}
+                                        change={(element)=> this.updateForm(element)}
+                                    />
+                                </div>
+                                <div className='right'>
+                                    <Formfield
+                                        id={'password'}
+                                        formdata={this.state.formdata.password}
+                                        change={(element)=> this.updateForm(element)}
+                                    />
+                                    <Formfield
+                                        id={'confirmPassword'}
+                                        formdata={this.state.formdata.confirmPassword}
+                                        change={(element)=> this.updateForm(element)}
+                                    />
+                                </div>
+                                </div>
+                                <div>
+                                        {this.state.formError ? 
+                                            <div className='error_label'>
+                                                Please check the required fields
+                                            </div>
+                                        :null}
+                                        <button onClick={(event)=> this.submitForm(event)}>
+                                            Register
+                                        </button>
+                                </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         );
