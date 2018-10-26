@@ -1,12 +1,19 @@
-export const validateFunction = (element) => {
+export const validateFunction = (element, formdata) => {
 
     let error = [true, ''] //success message
 
     if(element.validation.email){
-        const regex1 = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        const regex1 = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         const valid = regex1.test(element.value.trim())
         const message = `${!valid ? 'Must be a valid email':''}`
         error = !valid ? [valid,message] : error
+    }
+
+    if (element.validation.confirm) {
+        const valid = element.value.trim() === formdata[element.validation.confirm].value
+        const message = `${!valid ? 'Passwords do not match' : ''}`
+
+        error = !valid ? [valid, message] : error
     }
     
     if(element.validation.required) {

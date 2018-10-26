@@ -22,8 +22,9 @@ body {
     background: #ffe0a3;
 }
 .center {
-    width: 100%;
+    width: 50%;
     height: auto;
+    margin: auto;
 }
 
 .circle {
@@ -80,7 +81,7 @@ footer {
     text-align: center;
     font-size: 40px;
     color:#ffffff;
-    background: #ffc249;
+    background: #ffcb64;
 }
 
 footer .footer_copyright {
@@ -92,22 +93,26 @@ footer .footer_copyright {
 ==============================*/
 
 input {
-    font-size: 16px;
+    font-size: 14px;
     padding: 10px 10px;
     width: 100%;
-    margin: 10px 0px 0px 0px;
+    margin: 0px;
     box-sizing: border-box; /*for border control*/
 }
 
-button {
+.large_button {
     cursor: pointer;
     text-transform: uppercase;
     padding: 20px;
-    background: #e1ddc3;
     margin-top: 20px;
-    font-family: 'Righteous', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    color: #ffffff;
     box-sizing: border-box;
+    text-align: center;
+    background-color: #ff6a2e;
+    border-bottom: 4px solid #ff2020;
+    border-right: 4px solid #ff2600;
 }
 
 .error_label {
@@ -132,10 +137,13 @@ button {
     border: 1px solid #ffb171;
     border-bottom: 4px solid #fdff9a;
     border-right: 4px solid #ffb171;
+    left: 25%;
+    top: 150px;
     margin: auto;
-    margin-top: 50px;
+    margin-bottom: 40px;
     padding: 50px;
     min-height: 500px;
+    min-width: 600px;
     width: 50%;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -148,6 +156,12 @@ button {
 
 .register_inputs {
     margin-top: 20px;
+}
+
+.register_labels {
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Roboto'
 }
 
 .flex{

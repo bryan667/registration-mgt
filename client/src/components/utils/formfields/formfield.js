@@ -1,4 +1,5 @@
 import React from 'react';
+import FormLabel from './form_label'
 
 const Formfield = ({formdata, change, id}) => {
 
@@ -21,15 +22,18 @@ const Formfield = ({formdata, change, id}) => {
         switch(formdata.element) {
             case('input'):
                 formTemplate = (
-                    <div className='formBlock'>
-                        <input
-                            {...formdata.config}
-                            value={formdata.value}
-                            onBlur={(event)=> change({event, id, blur: true})}
-                            onChange={(event) => change({event, id})}
-                        >
-                        </input>
-                        {showError()}
+                    <div>
+                        <FormLabel formdata={formdata}/>
+                        <div className='formBlock'>
+                            <input
+                                {...formdata.config}
+                                value={formdata.value}
+                                onBlur={(event)=> change({event, id, blur: true})}
+                                onChange={(event) => change({event, id})}
+                            >
+                            </input>
+                            {showError()}
+                        </div>
                     </div>
                 )
 

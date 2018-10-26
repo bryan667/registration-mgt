@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Formfield from '../utils/formfield'
+import Formfield from '../utils/formfields/formfield'
+import LargeButton from '../utils/buttons/large_button'
 import { update, generateData, isFormValid } from '../utils/misc'
 import DogeImage from '../utils/doge-image'
 
@@ -15,6 +16,7 @@ class Register extends Component {
                 config: {
                     name: 'name_input',
                     type: 'text',
+                    label: 'Firstname',
                     placeholder: 'Enter your name'                    
                 },
                 validation: {
@@ -30,6 +32,7 @@ class Register extends Component {
                 config: {
                     name: 'lastname_input',
                     type: 'text',
+                    label: 'Lastname',
                     placeholder: 'Enter your lastname'                    
                 },
                 validation: {
@@ -45,6 +48,7 @@ class Register extends Component {
                 config: {
                     name: 'email_input',
                     type: 'email',
+                    label: 'Email',
                     placeholder: 'Enter your email'                    
                 },
                 validation: {
@@ -61,6 +65,7 @@ class Register extends Component {
                 config: {
                     name: 'password_input',
                     type: 'password',
+                    label: 'Password',
                     placeholder: 'Enter your password'                    
                 },
                 validation: {
@@ -76,6 +81,7 @@ class Register extends Component {
                 config: {
                     name: 'cofirm_password_input',
                     type: 'password',
+                    label: 'Confirm Password',
                     placeholder: 'Confirm your password'             
                 },
                 validation: {
@@ -123,7 +129,7 @@ class Register extends Component {
                             <div className='flex'>
                                 <div className='register_wrapper'>
                                     <h2>Registration Page</h2>
-                                    <p>welcome humane, many register pls join us.</p>
+                                    <p>welcome humane, many register pls join.</p>
                                 </div>
                                 <div>
                                     <DogeImage 
@@ -163,14 +169,14 @@ class Register extends Component {
                                 </div>
                             </div>
                                 <div>
-                                        {this.state.formError ? 
-                                            <div className='error_label'>
-                                                Please check the required fields
-                                            </div>
-                                        :null}
-                                        <button onClick={(event)=> this.submitForm(event)}>
-                                            Register
-                                        </button>
+                                    {this.state.formError ? 
+                                        <div className='error_label'>
+                                            Please check the required fields
+                                        </div>
+                                    :null}
+                                    <LargeButton
+                                        clickYeah={(event) => this.submitForm(event)}
+                                    />
                                 </div>
                         </form>
                     </div>
